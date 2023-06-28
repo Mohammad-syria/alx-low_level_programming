@@ -1,19 +1,25 @@
 #include "main.h"
 /**
- * puts2 - prints every other char
- * of a string
- * @str: input
+ * rev_string - prints a string in rev
+ * @s: input
  *
 */
 
-void puts2(char *str)
+void rev_string(char *s)
 {
-int n = 0;
+int l = 0, i = 0;
+char c;
 
-for (; str[n] != '\0'; n++)
+while (s[l])
 {
-	if (n % 2 == 0)
-		_putchar(str[n]);
+	l++;
 }
-_putchar('\n');
+
+while (i < l / 2)
+{
+	c = s[i];
+	s[i] = s[l - 1 - i];
+	s[l - 1 - i] = c;
+	i++;
+}
 }
